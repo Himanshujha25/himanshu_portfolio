@@ -30,6 +30,7 @@ export default function App() {
 
         <div className="relative z-0">
           <Starcanvas />
+          <About/>
         </div>
       </div>
     </BrowserRouter>

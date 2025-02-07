@@ -7,17 +7,26 @@ const Computers = () => {
   const computer = useGLTF("/desktop_pc/scene.gltf");
 
   return (
-    <mesh scale={0.8} position={[0, -0.5, -1]}> {/* Reduced scale for responsiveness */}
-      <hemisphereLight intensity={0.3} groundColor="black" />
-      <pointLight position={[10, 10, 10]} intensity={50} />
-      <primitive object={computer.scene} />
+    <mesh> 
+      <hemisphereLight intensity={1.5} groundColor="black" />
+      <pointLight intensity={65} />
+      <spotLight position={[-20,50,10]}
+      angle={0.12}
+      penumbra={1}
+      intensity={1}
+      castShadow
+shadow-mapSize={1024}/>
+      <primitive object={computer.scene} 
+      scale={0.90}
+      position={[0,-0.5,-1.5]}
+      rotation={[0,-0.4,-0.1]}/>
     </mesh>
   );
 };
 
 const ComputerCanvas = () => {
   return (
-    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] flex justify-center items-center  "> {/* Reduced size and margin for small screens */}
+    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] flex justify-center items-center  "> 
       <Canvas
         shadows
         camera={{ position: [20, 15, 10], fov: 25 }}
