@@ -19,10 +19,11 @@ export default function App() {
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
+          <About/>
         </div>
 
         <div className="mt-1">
- 
+      
           <Experience />
           <Tech />
           <Feedback />
@@ -30,7 +31,7 @@ export default function App() {
 
         <div className="relative z-0">
           <Starcanvas />
-          <About/>
+     
         </div>
       </div>
     </BrowserRouter>
