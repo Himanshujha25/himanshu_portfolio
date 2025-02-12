@@ -15,30 +15,42 @@ export default function Navbar() {
       <div className="w-full flex justify-between items-center px-6 md:px-10">
         {/* Logo and Name */}
         <Link
-          to="/"
-          className="flex items-center gap-3"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
-          <img src={logo} alt="logo" className="w-16 h-16 object-contain rounded-full" />
-          <p className="text-2xl font-bold cursor-pointer flex">
-            <span className="hidden sm:block">HIMANSHU</span>&nbsp;
-            <span className="text-yellow-500 italic block sm:hidden">Web Developer</span>
-            <span className="text-yellow-500 italic hidden sm:block"> || Web Developer</span>
-          </p>
-        </Link>
+  to="/"
+  className="flex items-center gap-3"
+  onClick={() => {
+    setActive("");
+    window.scrollTo(0, 0);
+  }}
+>
+  <img src={logo} alt="logo" className="w-16 h-16 object-contain rounded-full" />
+  <p className="text-2xl font-extrabold tracking-wide cursor-pointer flex font-[Playfair Display] text-yellow-500 italic">
+  Himanshu Jha
+</p>
+
+</Link>
+
+
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-2xl hover:text-yellow-600 font-thin transition duration-200`}
+              className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-lg font-medium hover:text-yellow-600 transition duration-200`}
               onClick={() => setActive(link.id)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {link.external ? (
+                <a
+                  href={link.URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-white text-lg hover:text-yellow-600 font-medium transition duration-200"
+                >
+                  {link.title}
+                </a>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )}
             </li>
           ))}
         </ul>
@@ -49,7 +61,7 @@ export default function Navbar() {
             src={toggle ? close : menu}
             alt="menu toggle"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)} 
+            onClick={() => setToggle(!toggle)}
           />
         </div>
       </div>
@@ -60,10 +72,10 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-2xl hover:text-yellow-600 transition duration-200 font-medium text-[16px]`}
+              className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-lg hover:text-yellow-600 transition duration-200 font-medium`}
               onClick={() => {
                 setActive(link.id);
-                setToggle(false); 
+                setToggle(false);
               }}
             >
               <a href={`#${link.id}`}>{link.title}</a>

@@ -18,16 +18,14 @@ import figma from "../assets/tech/figma.png";
 import docker from "../assets/tech/docker.png";
 import threejs from "../assets/tech/threejs.svg"
 // Import other assets
-import menu from "../assets/menu.svg";
-import close from "../assets/close.svg";
-import starbucks from "../assets/company/starbucks.png";
-import tesla from "../assets/company/tesla.png";
-import shopify from "../assets/company/shopify.png";
+
 import carrent from "../assets/carrent.png";
 import jobit from "../assets/jobit.png";
 import tripguide from "../assets/tripguide.png";
-import meta from "../assets/company/meta.png";
-
+import Recipemaker from "../assets/company/RecipeMaker.webp"
+import portfolio from "../assets/company/Portfolio Website.webp"
+import fitness from "../assets/company/Fitness App.webp"
+import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
 
   export const navLinks = [
     {
@@ -35,12 +33,18 @@ import meta from "../assets/company/meta.png";
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "Project",
+      title: "Project",
     },
     {
       id: "contact",
       title: "Contact",
+    },
+    {
+      id:"resume",
+      title:"Resume",
+      external:"true",
+      URL:"https://drive.google.com/file/d/1V_GFPBkkbT6vwqkuQKCsQKoRZiqLmJpZ/view?usp=drive_link"
     },
   ];
   
@@ -50,7 +54,7 @@ import meta from "../assets/company/meta.png";
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "React Developer",
       icon: mobile,
     },
     {
@@ -58,7 +62,7 @@ import meta from "../assets/company/meta.png";
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Content Writer",
       icon: creator,
     },
   ];
@@ -121,58 +125,57 @@ import meta from "../assets/company/meta.png";
   const experiences = [
     {
       title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      project_name: "RecipeMaker",
+      icon: Recipemaker,  // Replace with your actual project icon
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "01.02.23 - 02.03.23",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Developed and designed RecipeMaker using React.js and Tailwind CSS.",
+        "Implemented a dynamic filtering system for vegetarian, non-veg, vegan, and dessert categories.",
+        "Optimized the UI/UX for a seamless browsing experience.",
+        "Added responsive design and smooth animations for better user engagement.",
       ],
     },
     {
       title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
+      project_name: "Fitness App",
+      icon: fitness,  // Replace with your actual project icon
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "03.03.23 - 04.04.23",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Built a cross-platform fitness tracking app with React Native and Firebase.",
+        "Integrated real-time step tracking and goal setting features.",
+        "Ensured responsive UI with React Native Paper and custom animations.",
+        "Implemented authentication and user profiles with Firebase Auth.",
       ],
     },
     {
       title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      project_name: "Portfolio Website",
+      icon: portfolio,  // Replace with your actual project icon
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "05.04.23 - 06.05.23",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Designed and developed a personal portfolio showcasing projects and skills.",
+        "Implemented animations and transitions using Framer Motion.",
+        "Integrated a contact form with email functionality.",
+        "Optimized the website for SEO and fast loading speeds.",
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "Full Stack Developer",
+      project_name: "E-Commerce Platform",
+      icon: ecommerceIcon,  // Replace with your actual project icon
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "07.05.23 - 08.08.23",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Developed a full-stack e-commerce platform using the MERN stack.",
+        "Implemented secure authentication, product management, and cart functionality.",
+        "Integrated Stripe for online payments and order processing.",
+        "Optimized backend APIs for scalability and performance.",
       ],
     },
   ];
-  
   const testimonials = [
     {
       testimonial:
