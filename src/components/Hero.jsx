@@ -4,7 +4,7 @@ import ComputersCanvas from "./canvas/Computers";
 import { motion } from "framer-motion";
 import background from "../assets/background.webp"
 
-export default function Hero() {
+function Hero() {
   return (
     <section className="h-screen w-full relative mx-auto flex flex-col justify-between" style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center"}}>
 
@@ -60,17 +60,19 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute sm:bottom-1 mb-[88px] w-full flex justify-center items-center hidden sm:flex">
-        <a href="#about">
-          <div className="w-8 h-14 rounded-3xl border-2 border-gray-500 p-2 flex justify-center items-center cursor-pointer hover:border-white transition-all duration-300">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-              className="w-4 h-4 rounded-full bg-gray-500"
-            />
-          </div>
-        </a>
-      </div>
+      <div className="absolute sm:bottom-[2px] mb-[40px] w-full flex justify-center items-center hidden sm:flex">
+  <a href="#about">
+    <div className="w-8 h-14 rounded-3xl border-2 border-gray-500 p-2 flex justify-center items-center cursor-pointer hover:border-white transition-all duration-300">
+      <motion.div
+        animate={{ y: [0, 12, 0] }}
+        transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+        className="w-4 h-4 rounded-full bg-gray-500"
+      />
+    </div>
+  </a>
+</div>
+
     </section>
   );
 }
+export default Hero
