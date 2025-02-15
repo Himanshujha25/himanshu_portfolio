@@ -2,11 +2,12 @@ import React from "react";
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
 import { SectionWrapper } from "../hoc/";
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
+
 const Tech = () => {
   return (
     <div className="min-h-screen px-6 py-16 text-white relative overflow-hidden"
-    style={{ backgroundImage: `url(${background})` }}>
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       {/* Heading Section */}
       <div className="text-center mb-12 relative">
         <h2 className="text-6xl md:text-5xl font-extrabold tracking-wider relative inline-block pb-2 
@@ -23,7 +24,7 @@ const Tech = () => {
         {technologies.map((technology) => (
           <div 
             key={technology.name} 
-            className="w-36 h-36 text-white p-4 flex flex-col items-center justify-center 
+            className="w-36 h-40 text-white p-4 flex flex-col items-center justify-center 
                        bg-white/20 backdrop-blur-lg rounded-2xl shadow-lg shadow-cyan-300/40 
                        transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/60"
           >

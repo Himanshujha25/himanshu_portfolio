@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt"; // Corrected import
 import { SectionWrapper } from "../hoc";
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
 const Contact = () => {
   return (
-    <div className="text-white py-16 px-8 relative overflow-hidden min-h-screen"
-    style={{ backgroundImage: `url(${background})` }}>
+    <div id="contact" className="text-white py-16 px-8 relative overflow-hidden min-h-screen"
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       {/* Heading */}
       <motion.div 
         initial={{ opacity: 0, y: -50 }} 
@@ -80,7 +80,7 @@ const Contact = () => {
             <FaTwitter />
           </a>
         </div>
-        <p className="text-gray-400 text-lg">© {new Date().getFullYear()} Himanshu Jha. All Rights Reserved.</p>
+        <p className="text-gray-100 text-lg">© {new Date().getFullYear()} Himanshu Jha. All Rights Reserved.</p>
         <p className="text-gray-200">📩 jhahiamsnhu930@gmail.com</p>
       </footer>
     </div>

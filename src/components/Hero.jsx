@@ -2,13 +2,11 @@ import React from "react";
 import { styles } from "../styles";
 import ComputersCanvas from "./canvas/Computers";
 import { motion } from "framer-motion";
-import background from "../assets/background.jpg"
-
-
+import background from "../assets/background.webp"
 
 export default function Hero() {
   return (
-    <section className="h-screen w-full relative mx-auto flex flex-col justify-between" style={{ backgroundImage: `url(${background})`,}}>
+    <section className="h-screen w-full relative mx-auto flex flex-col justify-between" style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center"}}>
 
       {/* Top Content */}
       <div className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col sm:flex-row items-start gap-5 mt-[30px]`}>
@@ -48,7 +46,7 @@ export default function Hero() {
             transition={{ duration: 1.4, delay: 0.5 }}
             className={`${styles.heroSubText} text-gray-300 mt-3 font-medium text-[14px] sm:text-[18px]`}
           >
-            Passionate about building interactive UI & seamless digital experiences. 💻✨
+            Passionate about building interactive UI & seamless digital experiences.
           </motion.p>
 
 

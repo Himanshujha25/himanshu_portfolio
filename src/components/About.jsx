@@ -5,7 +5,7 @@ import { fadeIn } from "../utils/motion";
 import { services } from "../constants";
 import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
 // Service Card Component
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -33,7 +33,7 @@ const ServiceCard = ({ index, title, icon }) => {
 function About() {
   return (
     <div className={`${styles.padding} text-white relative overflow-hidden`} 
-    style={{ backgroundImage: `url(${background})` }}>
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       <motion.div id="about" className="text-center mt-16">
         <p className="text-lg text-teal-300">🌟 My Journey</p>
         <h2 className="text-6xl font-bold bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">

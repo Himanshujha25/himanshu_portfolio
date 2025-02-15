@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
 const educationDetails = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
@@ -48,7 +48,7 @@ const EducationCard = ({ degree, percentage, institution, year, index }) => {
 function Education() {
   return (
     <div className="text-white py-16 px-8 relative overflow-hidden min-h-screen"
-    style={{ backgroundImage: `url(${background})` }}>
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       <motion.div id="education" className="text-center">
         <p className="text-lg text-teal-300">📚 My Academic Journey</p>
         <h2 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FFA500]">

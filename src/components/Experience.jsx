@@ -5,7 +5,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../constants/index";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { textVariant } from '../utils/motion';
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -51,7 +51,7 @@ const ExperienceCard = ({ experience }) => {
 function Experience() {
   return (
     <div id='Project' className="min-h-screen py-10 text-white relative overflow-hidden"
-    style={{ backgroundImage: `url(${background})` }}>
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       <motion.div variants={textVariant()} className="text-center">
         <p className="text-lg text-teal-300">What I have done so far</p>
         <h2 className="text-6xl font-bold bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-transparent bg-clip-text">

@@ -1,17 +1,17 @@
 import React from "react";
-import background from "../assets/background.jpg"
+import background from "../assets/background.webp"
 const certifications = [
   {
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image: "src/assets/Certifications/Himanshujha html&Css.jpg",
+    image: "src/assets/Certifications/Himanshujha HTML.jpg",
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: "src/assets/Certifications/Himanshujha HTML.jpg",
+    image: "src/assets/Certifications/Himanshujha html&Css.jpg",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const certifications = [
 export default function Certification() {
   return (
     <section id="certification"  className="py-16 px-8 text-white relative overflow-hidden min-h-screen"
-    style={{ backgroundImage: `url(${background})` }}>
+    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
       
       {/* Section Heading with Gradient */}
       <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-transparent bg-clip-text uppercase">
@@ -56,7 +56,7 @@ export default function Certification() {
             className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/50 border border-yellow-500/20"
           >
             {/* Image Section */}
-            <div className="w-full h-48">
+            <div className="w-full h-52">
               <img
                 src={cert.image}
                 alt={cert.title}
