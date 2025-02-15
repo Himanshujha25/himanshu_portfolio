@@ -96,7 +96,7 @@ const Contact = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/himanshujha25"
+            href="www.linkedin.com/in/himanshu-jha-85021a318"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#FFD700] transition-all"
