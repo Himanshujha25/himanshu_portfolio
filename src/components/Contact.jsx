@@ -104,7 +104,7 @@ const Contact = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://twitter.com/himanshujha25"
+            href="https://twitter.com/jhahimanshu930"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#FFD700] transition-all"
