@@ -7,6 +7,9 @@ export default defineConfig({
     host: true,  // Allows external access
     strictPort: true,
     port: 5173, // Default Vite port
-    allowedHosts: 'all'  // Allows all hosts
+    allowedHosts: [
+      "5173-himanshujha-himanshupor-5p034hninja.ws-us117.gitpod.io",
+      ".gitpod.io"
+    ]  // Allows all hosts
   }
 });
