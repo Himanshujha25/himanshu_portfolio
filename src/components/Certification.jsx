@@ -23,7 +23,7 @@ const certifications = [
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: "/assets/Certifications/Himanshujha_ frontend(GenAi).jpg",
+    image: "/assets/Himanshujha_ frontend(GenAi).jpg",
   },
   {
     id: 5,
