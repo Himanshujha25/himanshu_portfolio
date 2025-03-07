@@ -15,21 +15,20 @@ export default function Navbar() {
       <div className="w-full flex justify-between items-center px-6 md:px-10">
         {/* Logo and Name */}
         <Link
-  to="/"
-  className="flex items-center gap-3"
-  onClick={() => {
-    setActive("");
-    window.scrollTo(0, 0);
-  }}
->
-  <img src={logo} alt="logo" className="w-16 h-16 object-contain rounded-full" />
-  <p className="text-2xl font-extrabold tracking-wide cursor-pointer flex font-[Playfair Display] text-yellow-500 italic">
-  Himanshu Jha
-</p>
-
-</Link>
-
-
+          to="/"
+          className="flex items-center gap-3"
+          onClick={() => {
+            setActive("");
+            window.scrollTo(0, 0);
+          }}
+        >
+          <div className="flex items-center justify-start space-x-12 ">
+            <img src={logo} alt="logo" className="w-16 h-16 mx-[-40px] object-contain rounded-full" />
+            <p className="text-2xl font-extrabold tracking-wide cursor-pointer font-[Playfair Display] text-yellow-500 extrabold">
+              Himanshu Jha
+            </p>
+          </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 items-center">
@@ -68,21 +67,33 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`${!toggle ? "hidden" : "flex"} sm:hidden absolute top-20 right-8 mx-4 min-w-[140px] z-10 p-6 bg-primary rounded-xl transition-all duration-300 ease-in-out`}>
-        <ul className="list-none flex justify-end items-start flex-col gap-4">
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-lg hover:text-yellow-600 transition duration-200 font-medium`}
-              onClick={() => {
-                setActive(link.id);
-                setToggle(false);
-              }}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
+  <ul className="list-none flex justify-end items-start flex-col gap-4">
+    {navLinks.map((link) => (
+      <li
+        key={link.id}
+        className={`cursor-pointer ${active === link.id ? "text-yellow-400" : "text-white"} text-lg hover:text-yellow-600 transition duration-200 font-medium`}
+        onClick={() => {
+          setActive(link.id);
+          setToggle(false);
+        }}
+      >
+        {link.external ? (
+          <a
+            href={link.URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer text-white text-lg hover:text-yellow-600 font-medium transition duration-200"
+          >
+            {link.title}
+          </a>
+        ) : (
+          <a href={`#${link.id}`}>{link.title}</a>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
     </nav>
   );
 }

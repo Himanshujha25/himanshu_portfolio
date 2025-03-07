@@ -11,7 +11,7 @@ const Computers = memo(({ isMobile }) => {
       <hemisphereLight intensity={1.2} groundColor="black" />
       <pointLight intensity={50} position={[5, 10, 5]} />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[-30, 50, 10]}
         angle={0.15}
         penumbra={1}
         intensity={1.5}
@@ -21,15 +21,15 @@ const Computers = memo(({ isMobile }) => {
       />
       <primitive
         object={scene}
-        scale={isMobile ? 0.55 : 0.9}
-        position={isMobile ? [.1, -1., -0.5] : [0, -1.5, -1.8]}
+        scale={isMobile ? 0.45 : 0.9}
+        position={isMobile ? [1, -0.01, -0.7] : [0, -1.5, -1.8]}
         rotation={[0, isMobile ? -0.15 : -0.25, -0.1]}
       />
     </mesh>
   );
 });
 
-const ComputersCanvas = () => {
+function ComputersCanvas() {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 768
   );
@@ -45,9 +45,7 @@ const ComputersCanvas = () => {
 
   return (
     <div
-      className={`w-full flex justify-center items-center ${
-        isMobile ? "h-[300px]" : "h-[600px]"
-      }`}
+      className={`w-full flex justify-center items-center ${isMobile ? "h-[300px]" : "h-[600px]"}`}
     >
       <Canvas
         shadows
@@ -62,14 +60,13 @@ const ComputersCanvas = () => {
             enableZoom={false}
             enablePan={false}
             maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
+            minPolarAngle={Math.PI / 2} />
           <Computers isMobile={isMobile} />
         </Suspense>
         <Preload all />
       </Canvas>
     </div>
   );
-};
+}
 
 export default ComputersCanvas;
