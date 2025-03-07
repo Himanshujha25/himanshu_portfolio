@@ -5,38 +5,38 @@ const certifications = [
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image: "/assets/Certifications/Himanshujha HTML.jpg",
+    image: "src/assets/Certifications/Himanshujha HTML.jpg",
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: "/assets/Certifications/Himanshujha html&Css.jpg",
+    image: "src/assets/Certifications/Himanshujha html&Css.jpg",
   },
   {
     id: 3,
     title: "Generative AI",
     description: "Explored AI models, prompt engineering, and real-world applications of Generative AI.",
-    image: "/assets/Certifications/Generativve ai_page-0001.jpg",
+    image: "src/assets/Certifications/Generativve ai_page-0001.jpg",
   },
   {
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: "/assets/Himanshujha_ frontend(GenAi).jpg",
+    image: "src/assets/Certifications/Himanshujha_ frontend(GenAi).jpg",
   },
   {
     id: 5,
     title: "JavaScript Essentials",
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
-    image: "/assets/Certifications/Himanshu javaScript.jpg",
+    image: "src/assets/Certifications/Himanshu javaScript.jpg",
   },
-  {
-    id: 6,
-    title: "React",
-    description: "Mastered core React concepts including ES6+, functions, and async programming.",
-    image: "/assets/Certifications/Himanshu javaScript.jpg",
-  },
+  // {
+  //   id: 6,
+  //   title: "React",
+  //   description: "Mastered core React concepts including ES6+, functions, and async programming.",
+  //   image: "src/assets/Certifications/Himanshu javaScript.jpg",
+  // },
 ];
 
 export default function Certification() {
