@@ -1,5 +1,6 @@
 import React from "react";
 import background from "../assets/background.webp"
+import { SectionWrapper } from "../hoc";
 const certifications = [
   {
     id: 1,
@@ -39,7 +40,7 @@ const certifications = [
   // },
 ];
 
-export default function Certification() {
+ function Certification() {
   return (
     <section id="certification"  className="py-16 px-8 text-white relative overflow-hidden min-h-screen"
     style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
@@ -78,4 +79,4 @@ export default function Certification() {
     </section>
   );
 }
-
+export default SectionWrapper(Certification,"certification");

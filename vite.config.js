@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Vite configuration to manage chunk sizes and improve performance
 export default defineConfig({
   plugins: [
     react(),
@@ -12,12 +11,10 @@ export default defineConfig({
     port: 5173,
   },
   build: {
-    // Increase chunk size warning limit if needed
-    chunkSizeWarningLimit: 5000, // Increase this to 1000 KB (optional)
+    chunkSizeWarningLimit: 5000, // Increase this to 5000 KB
 
     rollupOptions: {
       output: {
-        // Manual chunking to avoid large vendor chunks
         manualChunks(id) {
           if (id.includes('node_modules')) {
             return 'vendor'; // Group all node_modules into a single chunk called "vendor"
@@ -25,5 +22,10 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      legalComments: 'none',  // Suppresses eval warnings
+    },
+  },
 });
