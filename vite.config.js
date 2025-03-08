@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     // Increase chunk size warning limit if needed
-    chunkSizeWarningLimit: 1000, // Increase this to 1000 KB (optional)
+    chunkSizeWarningLimit: 5000, // Increase this to 1000 KB (optional)
 
     rollupOptions: {
       output: {
