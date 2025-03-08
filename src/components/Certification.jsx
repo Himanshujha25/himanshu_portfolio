@@ -5,13 +5,13 @@ const certifications = [
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image: "src/assets/Certifications/html.jpg",
+    image: "src/assets/certifications/html.jpg",
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: "src/assets/Certifications/html&Css.jpg",
+    image: "src/assets/certifications/html&Css.jpg",
   },
   {
     id: 3,
@@ -23,13 +23,13 @@ const certifications = [
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: "src/assets/Certifications/frontend(GenAi).jpg",
+    image: "src/assets/certifications/frontend(GenAi).jpg",
   },
   {
     id: 5,
     title: "JavaScript Essentials",
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
-    image: "src/assets/Certifications/javaScript.jpg",
+    image: "src/assets/certifications/javaScript.jpg",
   },
   // {
   //   id: 6,
