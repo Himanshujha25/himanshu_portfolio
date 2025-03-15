@@ -7,31 +7,31 @@ const certifications = [
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image:"public/html.png",
+    image:"/html.png",
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: "public/html&Css.png",
+    image: "/html&Css.png",
   },
   {
     id: 3,
     title: "Generative AI",
     description: "Explored AI models, prompt engineering, and real-world applications of Generative AI.",
-    image: "public/Generative.png",
+    image: "/Generative.png",
   },
   {
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: "public/frontend(GenAi).png",
+    image: "/frontend(GenAi).png",
   },
   {
     id: 5,
     title: "JavaScript Essentials",
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
-    image: "public/javascript.png",
+    image: "/javascript.png",
   },
 
 ];
