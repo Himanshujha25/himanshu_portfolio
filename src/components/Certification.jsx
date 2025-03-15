@@ -1,43 +1,44 @@
 import React from "react";
 import background from "../assets/background.webp"
 import { SectionWrapper } from "../hoc";
+import htmlImg from "../assets/html.png";
+import htmlCssImg from "../assets/html&Css.png";
+import generativeImg from "../assets/Generative.png";
+import frontendGenAiImg from "../assets/frontend(GenAi).png";
+import javaScriptImg from "../assets/javaScript.png";
+
 const certifications = [
   {
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image: "src/assets/html.png",
+    image: htmlImg,
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: "src/assets/html&Css.png",
+    image: htmlCssImg,
   },
   {
     id: 3,
     title: "Generative AI",
     description: "Explored AI models, prompt engineering, and real-world applications of Generative AI.",
-    image: "src/assets/Generative.png",
+    image: generativeImg,
   },
   {
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: "src/assets/frontend(GenAi).png",
+    image: frontendGenAiImg,
   },
   {
     id: 5,
     title: "JavaScript Essentials",
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
-    image: "src/assets/javaScript.png",
+    image: javaScriptImg,
   },
-  // {
-  //   id: 6,
-  //   title: "React",
-  //   description: "Mastered core React concepts including ES6+, functions, and async programming.",
-  //   image: "src/assets/Certifications/Himanshu javaScript.jpg",
-  // },
+
 ];
 
  function Certification() {
