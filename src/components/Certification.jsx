@@ -1,42 +1,37 @@
 import React from "react";
 import background from "../assets/background.webp"
 import { SectionWrapper } from "../hoc";
-import htmlImg from "../assets/html.png";
-import htmlCssImg from "../assets/html&Css.png";
-import generativeImg from "../assets/Generative.png";
-import frontendGenAiImg from "../assets/frontend(GenAi).png";
-import javaScriptImg from "../assets/javaScript.png";
 
 const certifications = [
   {
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image: htmlImg,
+    image:"public/html.png",
   },
   {
     id: 2,
     title: "HTML & CSS Crash Course",
     description: "Gained hands-on experience in building modern, responsive web pages using HTML & CSS.",
-    image: htmlCssImg,
+    image: "public/html&Css.png",
   },
   {
     id: 3,
     title: "Generative AI",
     description: "Explored AI models, prompt engineering, and real-world applications of Generative AI.",
-    image: generativeImg,
+    image: "public/Generative.png",
   },
   {
     id: 4,
     title: "Frontend with Generative AI",
     description: "Integrated AI tools into frontend development to enhance user experience and automation.",
-    image: frontendGenAiImg,
+    image: "public/frontend(GenAi).png",
   },
   {
     id: 5,
     title: "JavaScript Essentials",
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
-    image: javaScriptImg,
+    image: "public/javascript.png",
   },
 
 ];
