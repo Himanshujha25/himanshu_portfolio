@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../assets/background.webp"
+import background from "../assets/background.webp";
 import { SectionWrapper } from "../hoc";
 
 const certifications = [
@@ -7,7 +7,7 @@ const certifications = [
     id: 1,
     title: "HTML Introduction",
     description: "Learned the basics of HTML, including structure, elements, and semantic tags.",
-    image:"/html.png",
+    image: "/html.png",
   },
   {
     id: 2,
@@ -33,41 +33,48 @@ const certifications = [
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
     image: "/javascript.png",
   },
-
 ];
 
- function Certification() {
+function Certification() {
   return (
-    <section id="certification"  className="py-16 px-8 text-white relative overflow-hidden min-h-screen"
-    style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center" }}>
-      
-      {/* Section Heading with Gradient */}
-      <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-transparent bg-clip-text uppercase">
+    <section
+      id="certification"
+      className="py-20 px-12 text-white relative overflow-hidden min-h-screen"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Section Heading */}
+      <h2 className="text-5xl font-extrabold text-center mb-14 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text uppercase tracking-wide">
         My Certifications
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Certifications Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {certifications.map((cert) => (
           <div
             key={cert.id}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/50 border border-yellow-500/20"
+            className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/50 border border-yellow-500/20"
           >
-            {/* Image Section */}
-            <div className="w-full h-52">
+            {/* Image Section - Optimized for Clarity */}
+            <div className="w-full h-[250px] lg:h-[350px] flex justify-center items-center bg-gray-900">
               <img
                 src={cert.image}
                 alt={cert.title}
-                className="w-full h-full object-cover rounded-t-2xl"
+                className="w-auto max-w-full max-h-full object-contain"
               />
             </div>
 
             {/* Text Section */}
-            <div className="p-6">
-              {/* Certification Title with Gradient */}
-              <h3 className="text-2xl font-semibold bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-transparent bg-clip-text">
+            <div className="p-8 text-center">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
                 {cert.title}
               </h3>
-              <p className="text-md mt-3 text-gray-300 leading-relaxed">{cert.description}</p>
+              <p className="text-lg mt-4 text-gray-300 leading-relaxed">{cert.description}</p>
             </div>
           </div>
         ))}
@@ -75,4 +82,5 @@ const certifications = [
     </section>
   );
 }
-export default SectionWrapper(Certification,"certification");
+
+export default SectionWrapper(Certification, "certification");
