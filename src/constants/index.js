@@ -23,6 +23,7 @@ import carrent from "../assets/carrent.png";
 import jobit from "../assets/jobit.png";
 import tripguide from "../assets/tripguide.png";
 import Recipemaker from "../assets/company/RecipeMaker.webp"
+import smartcv from "../assets/company/Smart CV.webp"
 import portfolio from "../assets/company/Portfolio Website.webp"
 import fitness from "../assets/company/Fitness App.webp"
 import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
@@ -124,18 +125,20 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
   
   const experiences = [
     {
-      title: "React.js Developer",
-      project_name: "RecipeMaker",
-      icon: Recipemaker,  // Replace with your actual project icon
+      title: "Web Developer",
+      project_name: "Smart CV",
+      icon: smartcv,  // Replace with your actual Smart CV project icon variable
       iconBg: "#383E56",
-      date: "01.02.23 - 02.03.23",
+      date: "15.02.24 - 20.03.24",  // Update this based on your timeline
       points: [
-        "Developed and designed RecipeMaker using React.js and Tailwind CSS.",
-        "Implemented a dynamic filtering system for vegetarian, non-veg, vegan, and dessert categories.",
-        "Optimized the UI/UX for a seamless browsing experience.",
-        "Added responsive design and smooth animations for better user engagement.",
+        "Designed and developed Smart CV, a dynamic resume builder web app.",
+        "Integrated PDF generation using PDFKit on the backend.",
+        "Implemented download functionality allowing users to generate and download professional resumes.",
+        "Ensured responsive design and smooth user experience across devices.",
+        "👉 <a href='https://smart-cv-iota.vercel.app' target='_blank' rel='noopener noreferrer'>Visit Smart CV</a>"
       ],
-    },
+    }
+    ,
     {
       title: "React Native Developer",
       project_name: "Fitness App",
