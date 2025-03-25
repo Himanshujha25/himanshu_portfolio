@@ -23,7 +23,7 @@ import carrent from "../assets/carrent.png";
 import jobit from "../assets/jobit.png";
 import tripguide from "../assets/tripguide.png";
 import Recipemaker from "../assets/company/RecipeMaker.webp"
-import smartcv from "../assets/company/Smart CV.webp"
+import smartcv from "../assets/smart CV.webp"
 import portfolio from "../assets/company/Portfolio Website.webp"
 import fitness from "../assets/company/Fitness App.webp"
 import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
@@ -123,153 +123,57 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
     },
   ];
   
-  const experiences = [
-    {
-      title: "Web Developer",
-      project_name: "Smart CV",
-      icon: smartcv,  // Replace with your actual Smart CV project icon variable
-      iconBg: "#383E56",
-      date: "15.02.24 - 20.03.24",  // Update this based on your timeline
-      points: [
-        "Designed and developed Smart CV, a dynamic resume builder web app.",
-        "Integrated PDF generation using PDFKit on the backend.",
-        "Implemented download functionality allowing users to generate and download professional resumes.",
-        "Ensured responsive design and smooth user experience across devices.",
-        "👉 <a href='https://smart-cv-iota.vercel.app' target='_blank' rel='noopener noreferrer'>Visit Smart CV</a>"
-      ],
-    }
-    ,
-    {
-      title: "React Native Developer",
-      project_name: "Fitness App",
-      icon: fitness,  // Replace with your actual project icon
-      iconBg: "#E6DEDD",
-      date: "03.03.23 - 04.04.23",
-      points: [
-        "Built a cross-platform fitness tracking app with React Native and Firebase.",
-        "Integrated real-time step tracking and goal setting features.",
-        "Ensured responsive UI with React Native Paper and custom animations.",
-        "Implemented authentication and user profiles with Firebase Auth.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      project_name: "Portfolio Website",
-      icon: portfolio,  // Replace with your actual project icon
-      iconBg: "#383E56",
-      date: "05.04.23 - 06.05.23",
-      points: [
-        "Designed and developed a personal portfolio showcasing projects and skills.",
-        "Implemented animations and transitions using Framer Motion.",
-        "Integrated a contact form with email functionality.",
-        "Optimized the website for SEO and fast loading speeds.",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      project_name: "E-Commerce Platform",
-      icon: ecommerceIcon,  // Replace with your actual project icon
-      iconBg: "#E6DEDD",
-      date: "07.05.23 - 08.08.23",
-      points: [
-        "Developed a full-stack e-commerce platform using the MERN stack.",
-        "Implemented secure authentication, product management, and cart functionality.",
-        "Integrated Stripe for online payments and order processing.",
-        "Optimized backend APIs for scalability and performance.",
-      ],
-    },
-  ];
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
+ 
+ 
   
   const projects = [
     {
-      name: "Car Rent",
-      description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      name: "Smart CV",
+      description: "Designed and developed Smart CV, a dynamic resume builder web app with PDF generation and download functionality. Ensured responsive design and smooth user experience across devices.",
       tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
+        { name: "ReactJS", color: "blue-text-gradient" },
+        { name: "NodeJS", color: "green-text-gradient" },
+        { name: "PDFKit", color: "pink-text-gradient" },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: smartcv,
+      source_code_link: "https://smart-cv-iota.vercel.app",
+      date: "15.02.24 - 20.03.24",
     },
     {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      name: "Fitness App",
+      description: "Built a cross-platform fitness tracking app with React Native and Firebase. Integrated real-time step tracking, goal setting, authentication, and custom animations.",
       tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
+        { name: "React Native", color: "blue-text-gradient" },
+        { name: "Firebase", color: "green-text-gradient" },
+        { name: "React Native Paper", color: "pink-text-gradient" },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: fitness,
+      source_code_link: "#",
+      date: "03.03.23 - 04.04.23",
     },
     {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      name: "Portfolio Website",
+      description: "Designed and developed a personal portfolio showcasing projects and skills. Integrated contact form with email functionality, SEO optimization, and animations with Framer Motion.",
       tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
+        { name: "ReactJS", color: "blue-text-gradient" },
+        { name: "Framer Motion", color: "green-text-gradient" },
+        { name: "Tailwind CSS", color: "pink-text-gradient" },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: portfolio,
+      source_code_link: "#",
+      date: "05.04.23 - 06.05.23",
+    },
+    {
+      name: "E-Commerce Platform",
+      description: "Developed a full-stack e-commerce platform using the MERN stack. Integrated secure authentication, product management, cart functionality, and Stripe payments.",
+      tags: [
+        { name: "MERN Stack", color: "blue-text-gradient" },
+        { name: "Stripe", color: "green-text-gradient" },
+        { name: "MongoDB", color: "pink-text-gradient" },
+      ],
+      image: ecommerceIcon,
+      source_code_link: "#",
+      date: "07.05.23 - 08.08.23",
     },
   ];
-  
-  export { services, technologies, experiences, testimonials, projects, };
+  export { services, technologies, projects, };

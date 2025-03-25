@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 import Hero from "./components/Hero";
 import Tech from "./components/Tech";
 import Education from './components/Education';
@@ -18,7 +18,7 @@ export default function App() {
           <Navbar />
           <Hero />
           <About/>
-          <Experience />
+          <Projects />
           <Tech />
           <Certification/>
           <Education/>
