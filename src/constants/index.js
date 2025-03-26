@@ -176,4 +176,31 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       date: "07.05.23 - 08.08.23",
     },
   ];
-  export { services, technologies, projects, };
+  // Your previous imports...
+
+// FAQ Section Data
+const faqs = [
+  {
+    question: "What technologies do you specialize in?",
+    answer: "I specialize in ReactJS, NodeJS, MongoDB, Tailwind CSS, and modern frontend frameworks.",
+  },
+  {
+    question: "How can I contact you for a project?",
+    answer: "You can reach out via the contact form in the portfolio or directly through my email and LinkedIn provided in the contact section.",
+  },
+  {
+    question: "Do you offer freelance services?",
+    answer: "Yes, I am open to freelance projects related to web development, UI design, and full-stack applications.",
+  },
+  {
+    question: "Can you help me build a custom web application?",
+    answer: "Absolutely! I can help you design and develop custom web applications tailored to your specific needs.",
+  },
+  {
+    question: "What is your project delivery time?",
+    answer: "The project delivery time depends on the complexity of the project. Simple websites take 1-2 weeks, while complex full-stack apps may take a month or more.",
+  },
+];
+
+export { services, technologies, projects, faqs };
+

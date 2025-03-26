@@ -9,20 +9,23 @@ import Hero from "./components/Hero";
 import Tech from "./components/Tech";
 import Education from './components/Education';
 import Certification from './components/Certification';
-
+import FAQ from './components/Faq';
+import ChatBot from './components/Chat';
 export default function App() {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-black min-h-screen">
-        <div className=" bg-cover bg-no-repeat bg-center">
+        <div className="bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
-          <About/>
+          <About />
           <Projects />
           <Tech />
-          <Certification/>
-          <Education/>
-          <Contact/>
+          <Certification />
+          <Education />
+          <FAQ />           
+          <Contact />
+          <ChatBot/>
         </div>
       </div>
     </BrowserRouter>
