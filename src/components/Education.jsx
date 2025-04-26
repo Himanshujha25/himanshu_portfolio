@@ -13,13 +13,13 @@ const educationDetails = [
   },
   {
     degree: "Higher Secondary Education (12th)",
-    percentage: "64.7%",
+    percentage: "65%",
     institution: "Nutan Vidya Mandir",
     year: "2021 - 2023",
   },
   {
     degree: "Secondary Education (10th)",
-    percentage: "64%",
+    percentage: "65%",
     institution: "Nutan Vidya Mandir",
     year: "2019 - 2021",
   },

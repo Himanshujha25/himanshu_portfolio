@@ -33,6 +33,13 @@ const certifications = [
     description: "Mastered core JavaScript concepts including ES6+, functions, and async programming.",
     image: "/javascript.png",
   },
+  {
+    id: 6,
+    title: "Internal Hackathon Winner - IMS Noida",
+    description: "Secured 2nd place at the IMS Noida Internal Hackathon with the AI-based travel planner project 'Triply'.",
+    image: "/hackathon.png", // (Make sure you add a hackathon-related image or use any trophy/award icon)
+  },
+  
 ];
 
 function Certification() {

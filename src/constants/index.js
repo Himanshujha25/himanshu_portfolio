@@ -25,7 +25,7 @@ import tripguide from "../assets/tripguide.png";
 import Recipemaker from "../assets/company/RecipeMaker.webp"
 import smartcv from "../assets/smart CV.webp"
 import portfolio from "../assets/company/Portfolio Website.webp"
-import fitness from "../assets/company/Fitness App.webp"
+import triply from "../assets/triply.png"
 import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
 
   export const navLinks = [
@@ -45,7 +45,7 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       id:"resume",
       title:"Resume",
       external:"true",
-      URL:"https://drive.google.com/file/d/1V_GFPBkkbT6vwqkuQKCsQKoRZiqLmJpZ/view?usp=drive_link"
+      URL:"https://drive.google.com/file/d/131YoYS3M4ttg2XCnQQ90hfGZ_5nrNwCa/view?usp=drive_link"
     },
   ];
   
@@ -81,18 +81,18 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       name: "JavaScript",
       icon: javascript,
     },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
+    // {
+    //   name: "TypeScript",
+    //   icon: typescript,
+    // },
     {
       name: "React JS",
       icon: reactjs,
     },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
+    // {
+    //   name: "Redux Toolkit",
+    //   icon: redux,
+    // },
     {
       name: "Tailwind CSS",
       icon: tailwind,
@@ -105,10 +105,10 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       name: "MongoDB",
       icon: mongodb,
     },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
+    // {
+    //   name: "Three JS",
+    //   icon: threejs,
+    // },
     {
       name: "git",
       icon: git,
@@ -117,10 +117,10 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       name: "figma",
       icon: figma,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
+    // {
+    //   name: "docker",
+    //   icon: docker,
+    // },
   ];
   
  
@@ -140,17 +140,20 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       date: "15.02.24 - 20.03.24",
     },
     {
-      name: "Fitness App",
-      description: "Built a cross-platform fitness tracking app with React Native and Firebase. Integrated real-time step tracking, goal setting, authentication, and custom animations.",
+      name: "Triply - AI Travel Planner",
+      description: "Developed a full-stack AI-based travel planner using Tailwind CSS for styling, EJS for templating, Node.js and Express.js for backend, and MongoDB for database management. Deployed live on Vercel for seamless user experience.",
       tags: [
-        { name: "React Native", color: "blue-text-gradient" },
-        { name: "Firebase", color: "green-text-gradient" },
-        { name: "React Native Paper", color: "pink-text-gradient" },
+        { name: "Tailwind CSS", color: "blue-text-gradient" },
+        { name: "EJS", color: "green-text-gradient" },
+        { name: "Node.js", color: "pink-text-gradient" },
+        { name: "Express.js", color: "orange-text-gradient" },
+        { name: "MongoDB", color: "green-text-gradient" },
       ],
-      image: fitness,
-      source_code_link: "#",
-      date: "03.03.23 - 04.04.23",
-    },
+      image: triply, // make sure you imported your triply project image
+      source_code_link: "https://triplyv2.vercel.app/",
+      date: "10.04.24 - 24.04.24",
+    }
+    ,
     {
       name: "Portfolio Website",
       description: "Designed and developed a personal portfolio showcasing projects and skills. Integrated contact form with email functionality, SEO optimization, and animations with Framer Motion.",
