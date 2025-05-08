@@ -1,78 +1,142 @@
 import React from "react";
-import { styles } from "../styles";
-import ComputersCanvas from "./canvas/Computers";
 import { motion } from "framer-motion";
-import background from "../assets/background.webp"
+import { styles } from "../styles";
+import Avatar from "./canvas/Avatar";
+import background from "../assets/background.webp";
 
 function Hero() {
   return (
-    <section className="h-screen w-full relative mx-auto flex flex-col justify-between" style={{ backgroundImage: `url(${background})`, backgroundAttachment:"fixed",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center"}}>
-
-      {/* Top Content */}
-      <div className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col sm:flex-row items-start gap-5 mt-[30px]`}>
-
-        {/* Left Decoration (Hidden on small screens) */}
-        <div className="sm:flex hidden flex-col items-center justify-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff] animate-pulse" />
-          <div className="w-1 sm:h-80 h-40 bg-gradient-to-b from-[#915eff] to-transparent mt-2 animate-fadeIn" />
-        </div>
-
-        {/* Hero Text */}
-        <div className="mt-5 sm:mt-0 flex flex-col sm:ml-5 justify-center items-start font-sans">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className={`${styles.heroHeadText} text-white font-extrabold tracking-wide text-[28px] sm:text-[44px]`}
-          >
-            Hi, I'm
-            <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-transparent bg-clip-text font-extrabold">
-              {" "}Himanshu Jha
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className={`${styles.heroSubText} text-white mt-2 font-semibold italic tracking-wider text-[18px] sm:text-[24px]`}
-          >
-            🚀 Web Developer | Crafting Amazing Web Experiences
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.4, delay: 0.5 }}
-            className={`${styles.heroSubText} text-gray-300 mt-3 font-medium text-[14px] sm:text-[18px]`}
-          >
-            Passionate about building interactive UI & seamless digital experiences.
-          </motion.p>
-
-
-        
-        </div>
+    <section className="h-screen w-full relative overflow-hidden">
+      {/* Background Layers */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{ 
+          backgroundImage: `url(${background})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+       
       </div>
 
-      {/* 3D Model Section */}
-      <div className="w-full h-[250px] sm:h-[500px] md:h-[600px] flex justify-center items-center sm:mt-[-200px] md:mt-[-250px]">
-        <ComputersCanvas />
+      {/* Animated Particles */}
+      <div className="absolute inset-0 opacity-40 z-1">
+        {[...Array(60)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-0.5 h-0.5 bg-purple-300 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -150],
+              x: [0, (Math.random() - 0.5) * 80],
+              opacity: [0, 0.8, 0],
+              scale: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute sm:bottom-[2px] mb-[40px] w-full flex justify-center items-center hidden sm:flex">
-  <a href="#about">
-    <div className="w-8 h-14 rounded-3xl border-2 border-gray-500 p-2 flex justify-center items-center cursor-pointer hover:border-white transition-all duration-300">
-      <motion.div
-        animate={{ y: [0, 12, 0] }}
-        transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-        className="w-4 h-4 rounded-full bg-gray-500"
-      />
-    </div>
-  </a>
-</div>
+      <div className={`${styles.paddingX} max-w-7xl mx-auto relative z-10 h-full flex flex-col`}>
+        <div className="flex flex-col lg:flex-row items-center justify-between h-full pt-20 pb-40">
+          {/* Text Content */}
+          <div className="flex-1 lg:max-w-2xl xl:max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className={`${styles.heroHeadText} text-white mb-6`}>
+                Hi, I'm
+                <motion.span
+                  initial={{ backgroundPositionX: "100%" }}
+                  animate={{ backgroundPositionX: "0%" }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                  }}
+                  className="ml-4 bg-gradient-to-r text-yellow-500 bg-[length:200%] text-transparent bg-clip-text"
+                >
+                  Himanshu Jha
+                </motion.span>
+              </h1>
 
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="space-y-8"
+              >
+                <motion.p
+                  className={`${styles.heroSubText} text-white font-medium`}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    🚀 Full Stack Developer
+                  </span>
+                  <span className="mx-4 text-purple-300">|</span>
+                  <span className="text-cyan-300 italic">Digital Innovator</span>
+                </motion.p>
+
+                <motion.p
+                  className="text-gray-200 text-xl leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  Crafting immersive digital experiences through cutting-edge web technologies,
+                  3D visualization, and intuitive user interfaces that push creative boundaries.
+                </motion.p>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  className="flex gap-6 mt-12"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1 }}
+                >
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.05, 
+                      boxShadow: "0 8px 32px rgba(99, 102, 241, 0.4)",
+                      y: -2
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => window.location.href='#project'}
+                    className="px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl font-bold text-white shadow-2xl backdrop-blur-lg transition-all"
+                  >
+                    View Projects
+                  </motion.button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* 3D Avatar Integration */}
+          <motion.div
+  className="relative w-full h-[80vh] md:h-screen mt-10 lg:mt-0 lg:w-1/2 flex items-center justify-center"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1.5, delay: 0.3 }}
+>
+  <Avatar />
+</motion.div>
+
+
+        </div>
+      </div>
     </section>
   );
 }
-export default Hero
+
+export default Hero;

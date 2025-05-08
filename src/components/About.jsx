@@ -1,89 +1,146 @@
 import React from "react";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
-import { fadeIn } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 import { services } from "../constants";
 import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
 import background from "../assets/background.webp";
 
-// Service Card Component
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    <div className="relative z-0">
-      <Tilt className="w-full sm:w-[280px] md:w-[300px] lg:w-[320px] cursor-pointer">
-        <motion.div
-          variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-          className="w-[230px] h-[215px] bg-[#1D1836] bg-opacity-90 backdrop-blur-md 
-          border border-white border-opacity-10 rounded-2xl shadow-xl hover:shadow-2xl 
-          transition-all duration-300 hover:scale-[1.08] p-6 hover:bg-opacity-30 
-          transform hover:rotate-1 relative z-0"
-        >
-          <div className="rounded-2xl py-6 px-6 flex flex-col justify-center items-center text-white">
-            <img src={icon} alt={title} className="w-16 h-16 object-contain drop-shadow-md" />
-            <h3 className="text-[20px] font-bold tracking-wide text-center mt-4 transition-all duration-300 hover:text-[#915EFF] bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
-              {title}
-            </h3>
-          </div>
-        </motion.div>
+    <motion.div variants={fadeIn("right", "spring", index * 0.5, 0.75)}>
+      <Tilt
+        options={{ max: 45, scale: 1, speed: 450 }}
+        className="w-full xs:w-[250px]"
+      >
+        <div className="bg-[#1d1836]/70 backdrop-blur-lg border border-[#ffffff14] rounded-2xl p-6 min-h-[280px] flex flex-col justify-evenly items-center shadow-2xl hover:shadow-[#915eff]/20 transition-all duration-300 group relative overflow-hidden">
+          {/* Neon Border Effect */}
+          <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#915eff]/50 transition-all duration-300 pointer-events-none" />
+          
+          <img
+            src={icon}
+            alt={title}
+            className="w-20 h-20 object-contain filter drop-shadow-[0_0_15px_rgba(145,94,255,0.3)]"
+          />
+          <h3 className="text-white text-[20px] font-bold text-center bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FF6B6B] bg-clip-text text-transparent">
+            {title}
+          </h3>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#915eff10_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
       </Tilt>
-    </div>
+    </motion.div>
   );
 };
 
 function About() {
   return (
-    <div
-      className={`${styles.padding} text-white relative overflow-hidden`}
-      style={{
+    <section
+      className={`${styles.padding} relative min-h-screen overflow-hidden`}
+      style={{ 
         backgroundImage: `url(${background})`,
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <motion.div id="about" className="text-center mt-16">
-        <p className="text-lg text-teal-300">🌟 My Journey</p>
-        <h2 className="text-6xl font-bold bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
-          Overview.
-        </h2>
-      </motion.div>
+      {/* Background Overlay */}
+     
+      
+      {/* Animated Particles */}
+      <div className="absolute inset-0 opacity-40">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-0.5 h-0.5 bg-purple-400 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100],
+              x: [0, (Math.random() - 0.5) * 50],
+              opacity: [0, 0.8, 0],
+            }}
+            transition={{
+              duration: Math.random() * 4 + 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-16 mt-14 px-4 sm:px-8">
-        {/* About Text */}
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="text-gray-300 text-[18px] leading-[34px] max-w-2xl px-6 font-light tracking-wide 
-          bg-[#1D1836] bg-opacity-90 border border-white border-opacity-10 p-6 sm:p-8 rounded-xl shadow-lg 
-          backdrop-blur-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] text-center sm:text-left"
-        >
-          🚀 I'm a <span className="text-[#915EFF] font-semibold">passionate Web Developer</span>,
-          driven by the power of technology and creativity.
-          I specialize in{" "}
-          <span className="text-teal-300 font-semibold">JavaScript, React, Node.js, and MongoDB</span>,
-          crafting engaging, high-performance web applications.
-          <br />
-          <br />
-          Started with <span className="text-yellow-400 font-semibold">HTML, CSS, and JavaScript</span>, I quickly evolved into
-          <span className="text-[#915EFF] font-semibold"> React</span> for front-end mastery.
-          On the backend, I harness the power of{" "}
-          <span className="text-pink-400 font-semibold">Node.js and Express</span> with{" "}
-          <span className="text-red-400 font-semibold">MongoDB</span> as my database backbone.
-          <br />
-          <br />
-          I live for solving complex problems, embracing new technologies, and building meaningful solutions.
-          <span className="text-indigo-400 font-semibold"> My dream? To become an elite MERN Stack Developer! </span>
-        </motion.p>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <motion.div variants={textVariant()} id="about" className="text-center">
+          <p className={`${styles.sectionSubText} text-teal-300`}>Introduction</p>
+          <h2 className={`${styles.sectionHeadText} mb-12`}>
+            Professional <span className="text-[#915eff]">Overview</span>
+          </h2>
+        </motion.div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-x-16 sm:gap-y-8 sm:justify-center">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} index={index} {...service} />
-          ))}
+        <div className="flex flex-col lg:flex-row gap-12">
+          <motion.div
+            variants={fadeIn("", "", 0.1, 1)}
+            className="flex-1 bg-[#1d1836]/70 backdrop-blur-lg rounded-2xl border border-[#ffffff14] p-8 shadow-xl"
+          >
+            <p className="text-gray-300 text-lg leading-[32px] font-light tracking-wide">
+              <span className="text-[#915eff] font-medium">🚀 Full-Stack Developer</span> specializing in modern web technologies with expertise in:
+              
+              <ul className="grid grid-cols-2 gap-4 mt-6 mb-8">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#915eff] rounded-full mr-2" />
+                  React & Next.js
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#FFD700] rounded-full mr-2" />
+                  Node.js & Express
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#FF6B6B] rounded-full mr-2" />
+                  MongoDB & PostgreSQL
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#00FF88] rounded-full mr-2" />
+                  TypeScript
+                </li>
+              </ul>
+
+              With <span className="text-[#915eff]">9+ Month</span> of experience, I've developed a passion for creating:
+              
+              <div className="mt-6 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 bg-[#915eff] rounded-full flex-shrink-0" />
+                  <span>High-performance web applications</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 bg-[#FFD700] rounded-full flex-shrink-0" />
+                  <span>Interactive user interfaces</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 bg-[#FF6B6B] rounded-full flex-shrink-0" />
+                  <span>Scalable backend solutions</span>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-[#ffffff08] rounded-xl border border-[#ffffff14]">
+                <span className="text-[#915eff]">Current Focus:</span>{" "}
+                Building enterprise-level MERN stack applications with a focus on performance and user experience.
+              </div>
+            </p>
+          </motion.div>
+
+          <div className="lg:w-[40%]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <ServiceCard key={service.title} index={index} {...service} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

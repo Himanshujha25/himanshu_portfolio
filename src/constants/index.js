@@ -33,10 +33,10 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       id: "about",
       title: "About",
     },
-    {
-      id: "Project",
-      title: "Project",
-    },
+{
+  id:"project",
+  title:"Project",
+},
     {
       id: "contact",
       title: "Contact",
