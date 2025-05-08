@@ -1,14 +1,15 @@
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { useRef, useMemo } from 'react'
 
 export default function Avatar() {
   return (
-    <div className="w-full h-full">
+    <div className="absolute inset-0 z-50">
       <Canvas
         shadows
-        camera={{ fov: 45, position: [0, 0.5, 4] }}
+        camera={{ fov: 45, position: [0, 0.8, 8] }}
         gl={{ preserveDrawingBuffer: true }}
+        className="w-full h-full"
       >
         <AvatarModel />
       </Canvas>
@@ -19,6 +20,18 @@ export default function Avatar() {
 function AvatarModel() {
   const meshRef = useRef()
   const pointLightRef = useRef()
+
+  // ✅ Track screen width for responsive size
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
@@ -52,9 +65,9 @@ function AvatarModel() {
         minPolarAngle={Math.PI / 2}
       />
 
-      {/* Floating Sphere */}
+      {/* ✅ Sphere with responsive size */}
       <mesh ref={meshRef}>
-        <sphereGeometry args={[1.4, 64, 64]} />
+        <sphereGeometry args={[isMobile ? 1.4 : 1, 64, 64]} />
         <meshStandardMaterial
           color="#915EFF"
           metalness={0.8}
@@ -64,7 +77,6 @@ function AvatarModel() {
         />
       </mesh>
 
-      {/* Particles */}
       {particles.map(({ key, position }) => (
         <mesh key={key} position={position}>
           <sphereGeometry args={[0.03, 16, 16]} />
@@ -76,7 +88,6 @@ function AvatarModel() {
         </mesh>
       ))}
 
-      {/* Lights */}
       <ambientLight intensity={0.4} />
       <directionalLight position={[3, 3, 2]} intensity={0.8} castShadow />
       <pointLight
