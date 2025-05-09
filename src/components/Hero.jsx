@@ -17,12 +17,10 @@ function Hero() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      >
-       
-      </div>
+      />
 
       {/* Animated Particles */}
-      <div className="absolute inset-0 opacity-40 z-1">
+      <div className="absolute inset-0 opacity-40 z-10">
         {[...Array(60)].map((_, i) => (
           <motion.div
             key={i}
@@ -46,10 +44,10 @@ function Hero() {
         ))}
       </div>
 
-      <div className={`${styles.paddingX} max-w-7xl mx-auto relative z-10 h-full flex flex-col`}>
-        <div className="flex flex-col lg:flex-row items-center justify-between h-full pt-20 pb-40">
+      <div className={`${styles.paddingX} max-w-7xl mx-auto relative z-20 h-full flex flex-col`}>
+        <div className="flex flex-col lg:flex-row items-center justify-between h-full pt-20 pb-10">
           {/* Text Content */}
-          <div className="flex-1 lg:max-w-2xl xl:max-w-3xl">
+          <div className="flex-1 lg:max-w-xl xl:max-w-2xl z-30">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -122,17 +120,15 @@ function Hero() {
             </motion.div>
           </div>
 
-          {/* 3D Avatar Integration */}
+          {/* 3D Avatar Integration - Fixed positioning */}
           <motion.div
-  className="relative w-full h-[80vh] md:h-screen mt-10 lg:mt-0 lg:w-1/2 flex items-center justify-center"
-  initial={{ opacity: 0, x: 50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1.5, delay: 0.3 }}
->
-  <Avatar />
-</motion.div>
-
-
+            className="lg:w-1/2 w-full h-[500px] z-20 relative mt-8 lg:mt-0"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+          >
+            <Avatar />
+          </motion.div>
         </div>
       </div>
     </section>
