@@ -14,26 +14,72 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      scrollTop > 100 ? setScrolled(true) : setScrolled(false);
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    
+    // Initial check
+    handleScroll();
+    
+    // Set active based on current location hash on load
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setActive(hash);
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Close mobile menu when clicking outside
+    const handleClickOutside = (event) => {
+      if (toggle && !event.target.closest('.mobile-menu-container')) {
+        setToggle(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [toggle]);
 
   const handleNavClick = (id) => {
     setActive(id);
     setToggle(false);
-    if (id === "") window.scrollTo(0, 0);
+    
+    // Smooth scroll to section
+    if (id === "") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        // Account for navbar height
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        
+        window.scrollTo({
+          top: elementPosition - navHeight,
+          behavior: "smooth"
+        });
+      }
+    }
   };
 
   return (
-    <nav className={`${styles.paddingX} w-full fixed top-0 z-20 ${
-      scrolled ? "bg-primary/95 backdrop-blur-md" : "bg-transparent"
-    } transition-all duration-300 ease-in-out `}>
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto py-3 pr-1 ">
+    <nav className={`${styles.paddingX} w-full fixed top-0 z-50 ${
+      scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+    } transition-all duration-300 ease-in-out`}>
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto py-3 pr-1">
         {/* Logo and Name */}
-     
         <Link
           to="/"
           className="flex items-center gap-3"
@@ -50,7 +96,6 @@ export default function Navbar() {
           </p>
         </Link>
        
-
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
@@ -77,7 +122,10 @@ export default function Navbar() {
                       ? "text-yellow-400 underline decoration-2 underline-offset-4" 
                       : "text-white"
                   } hover:text-yellow-400 hover:underline decoration-2 underline-offset-4 transition-all duration-300`}
-                  onClick={() => handleNavClick(link.id)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.id);
+                  }}
                 >
                   {link.title}
                 </a>
@@ -102,7 +150,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div className={`${
           toggle ? "flex" : "hidden"
-        } md:hidden absolute top-20 right-6 bg-primary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-6 transition-all duration-300`}>
+        } md:hidden absolute top-20 right-6 bg-primary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-6 transition-all duration-300 mobile-menu-container`}>
           <ul className="list-none flex flex-col gap-4 w-full">
             {navLinks.map((link) => (
               <li key={link.id}>
@@ -127,7 +175,10 @@ export default function Navbar() {
                         ? "text-yellow-400 underline decoration-2 underline-offset-4" 
                         : "text-white"
                     } hover:text-yellow-400 transition-all duration-300`}
-                    onClick={() => handleNavClick(link.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(link.id);
+                    }}
                   >
                     {link.title}
                   </a>
