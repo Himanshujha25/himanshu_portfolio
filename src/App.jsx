@@ -1,6 +1,7 @@
 import React from 'react';
 import "./App.css";
 import { BrowserRouter } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from './components/Navbar';
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -26,6 +27,7 @@ export default function App() {
           <FAQ />           
           <Contact />
           <ChatBot/>
+          <Analytics />
         </div>
       </div>
     </BrowserRouter>
