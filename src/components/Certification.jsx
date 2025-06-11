@@ -37,8 +37,12 @@ const certifications = [
     id: 6,
     title: "Internal Hackathon Winner - IMS Noida",
     description: "Secured 2nd place at the IMS Noida Internal Hackathon with the AI-based travel planner project 'Triply'.",
-    image: "/hackathon.png", // (Make sure you add a hackathon-related image or use any trophy/award icon)
-  },
+    image: "/hackthon.jpg",
+  },{
+  id: 7,
+  title: "Meta Front-End Developer Professional Certificate (React)",
+  description: "Successfully completed the Meta Front-End Developer Professional Certificate, with a strong focus on building user interfaces using React.",
+  image: "/react.jpg" }
   
 ];
 
