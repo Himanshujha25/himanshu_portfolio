@@ -45,7 +45,7 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       id:"resume",
       title:"Resume",
       external:"true",
-      URL:"https://drive.google.com/file/d/1NL5L6srHRSuGk4EH7jibQAZ3nAz2gCeO/view?usp=drive_link"
+      URL:"https://drive.google.com/file/d/1mjMDZ74ASiH1gyaukX9vs8uBa23719Oe/view?usp=drive_link"
     },
   ];
   
