@@ -117,10 +117,10 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       name: "figma",
       icon: figma,
     },
-    // {
-    //   name: "docker",
-    //   icon: docker,
-    // },
+    {
+      name: "docker",
+      icon: docker,
+    },
   ];
   
  
