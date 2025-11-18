@@ -1,0 +1,153 @@
+{
+  "name": "Himanshu Jha",
+  "title": "Full Stack MERN Developer | AI & Chatbot Enthusiast | BCA 2nd Year",
+  "bio": "I am Himanshu Jha, a passionate Full Stack MERN Developer currently pursuing BCA (2nd Year) from IMS Noida. I build modern, fast, and responsive web applications using React.js, Node.js, Express.js, and MongoDB. I also have a strong interest in AI chatbots, automation systems, problem-solving, and creating impactful digital experiences. With hands-on experience in client projects and multiple personal projects, I focus on writing clean, structured and scalable code. I aim to become a strong full-stack engineer while improving my DSA + system design knowledge.",
+  
+  "email": "jhahiamsnhu930@gmail.com",
+  "contactNumber": "+91 8888888888",
+  "location": "Noida, Uttar Pradesh, India",
+
+  "socialLinks": {
+    "github": "https://github.com/himanshujha25",
+    "linkedin": "https://linkedin.com/in/himanshujha25",
+    "twitter": "https://twitter.com/himanshujha25",
+    "instagram": "https://instagram.com/himanshujha25",
+    "portfolio": "https://your-portfolio-link-here.com"
+  },
+
+  "education": [
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "year": "2024–2027",
+      "institute": "Institute of Management Studies (IMS), Noida",
+      "details": "Currently in 2nd Year. Focus areas include computer fundamentals, programming principles, data structures, networking, and modern development technologies."
+    }
+  ],
+
+  "skills": {
+    "frontend": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Responsive Design"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "Authentication (JWT)"
+    ],
+    "databases": [
+      "MongoDB",
+      "MySQL",
+      "Firebase"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Kubernetes (Basics)",
+      "VS Code",
+      "Vercel",
+      "Render"
+    ],
+    "otherSkills": [
+      "Problem Solving",
+      "DSA Basics",
+      "Networking (Completed CCN Basics)",
+      "Python (Basics)",
+      "Cybersecurity Fundamentals"
+    ]
+  },
+
+  "projects": [
+    {
+      "title": "Random Quote Generator",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "description": "A simple UI-based quote generator that fetches random motivational quotes, designed with a smooth user interface and clean layout.",
+      "github": "https://github.com/himanshujha25/random-quote-generator",
+      "live": "https://your-live-url.com"
+    },
+    {
+      "title": "BMI Calculator",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "description": "A responsive BMI calculator that allows users to enter height and weight and get health metrics instantly. Includes clean UI and color-coded category results.",
+      "github": "https://github.com/himanshujha25/bmi-calculator"
+    },
+    {
+      "title": "To-Do List App",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "description": "A minimal, user-friendly task manager with dynamic task creation, deletion, and local storage support.",
+      "github": "https://github.com/himanshujha25/todo-list"
+    },
+    {
+      "title": "Unlimited Color Changer",
+      "tech": ["JavaScript"],
+      "description": "A fun interactive project that changes the background color continuously using JavaScript's random color logic.",
+      "github": "https://github.com/himanshujha25/color-changer"
+    },
+    {
+      "title": "Live Client Website",
+      "tech": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      "description": "Designed and developed a fully responsive live client website with optimized UI, backend integration, and deployment.",
+      "live": "https://client-website.com"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Freelance Web Developer",
+      "year": "2024–Present",
+      "details": "Developed modern websites for clients using React.js, Node.js, and MongoDB. Delivered responsive UI, admin-friendly features, and custom requirements."
+    },
+    {
+      "role": "Hackathon Participant - Runner Up",
+      "event": "Hack Prep 1.0",
+      "details": "Built an AI-based driving assistant using YOLO + OpenCV for real-time object detection. Outperformed 40+ teams in technical precision."
+    }
+  ],
+
+  "services": [
+    {
+      "name": "Web Design",
+      "description": "Creating clean, modern, and visually appealing UI designs with a strong focus on UX."
+    },
+    {
+      "name": "Web Development",
+      "description": "Building responsive, scalable, and high-performance websites using MERN stack."
+    },
+    {
+      "name": "Portfolio Website Creation",
+      "description": "Custom portfolio development for developers, designers, and freelancers."
+    },
+    {
+      "name": "Landing Page Design",
+      "description": "High-conversion landing pages for businesses and startups."
+    }
+  ],
+
+  "achievements": [
+    "Completed 100+ DSA questions on LeetCode and built strong problem-solving skills.",
+    "Runner-up at Hack Prep 1.0 Hackathon.",
+    "Delivered multiple client projects successfully.",
+    "Started learning AI chatbots and backend integrations."
+  ],
+
+  "faqs": [
+    {
+      "question": "What technologies do you use?",
+      "answer": "I mainly work with MERN Stack: MongoDB, Express.js, React.js, Node.js."
+    },
+    {
+      "question": "Do you build portfolio websites?",
+      "answer": "Yes, I design and develop fully responsive and attractive portfolio websites."
+    },
+    {
+      "question": "Are you available for freelance work?",
+      "answer": "Yes, I take freelance projects depending on availability."
+    }
+  ]
+}
