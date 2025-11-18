@@ -167,17 +167,21 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       date: "05.04.23 - 06.05.23",
     },
     {
-      name: "E-Commerce Platform",
-      description: "Developed a full-stack e-commerce platform using the MERN stack. Integrated secure authentication, product management, cart functionality, and Stripe payments.",
-      tags: [
-        { name: "MERN Stack", color: "blue-text-gradient" },
-        { name: "Stripe", color: "green-text-gradient" },
-        { name: "MongoDB", color: "pink-text-gradient" },
-      ],
-      image: ecommerceIcon,
-      source_code_link: "#",
-      date: "07.05.23 - 08.08.23",
-    },
+  name: "Zipacres.com – Real Estate Platform",
+  description:
+    "Built the complete frontend and backend architecture for Zipacres.com, a real estate property discovery platform. Designed the entire UI/UX including homepage, property grids, location-based search, dynamic filters, project highlights, and individual property detail pages. Implemented secure user authentication, admin dashboard, property uploads, image gallery, and API integrations. Delivered a smooth, responsive, and professional real estate experience with modern web design principles.",
+  tags: [
+    { name: "React.js", color: "blue-text-gradient" },
+    { name: "Node.js", color: "green-text-gradient" },
+    { name: "MongoDB", color: "pink-text-gradient" },
+    { name: "Express.js", color: "orange-text-gradient" },
+    { name: "UI/UX", color: "purple-text-gradient" },
+  ],
+  image: ecommerceIcon,   // replace with your zipacres screenshot
+  source_code_link: "https://zipacres.com",
+  date: "06.10.24 - 15.12.24",
+}
+
   ];
   // Your previous imports...
 
