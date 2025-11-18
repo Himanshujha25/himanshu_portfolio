@@ -1,106 +1,42 @@
-import { useEffect, useState, useRef, useMemo } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { useState } from "react";
+import AvatarModel from "./Avtarmodel";
 
 export default function Avatar() {
+  const [isInteracting, setIsInteracting] = useState(false);
+
   return (
-    <div className="relative h-full w-full">
+    <div className="w-full h-[600px] md:h-[720px]">
       <Canvas
         shadows
-        camera={{ fov: 45, position: [0, 0.8, 8] }}
-        gl={{ preserveDrawingBuffer: true }}
+        camera={{ fov: 30, position: [0, 1.5, 7] }}
         className="w-full h-full"
       >
-        <AvatarModel />
+        <ambientLight intensity={0.65} />
+        <directionalLight position={[6, 10, 6]} intensity={1.3} />
+
+        {/* detect user movement */}
+        <OrbitControls
+          enableZoom={false}
+          autoRotate={false}
+
+          // LOCK X ROTATION (UP/DOWN)
+          minPolarAngle={Math.PI / 2}  
+          maxPolarAngle={Math.PI / 2}   
+
+          // allow only horizontal rotation
+          enablePan={false}
+          rotateSpeed={1}
+
+          onStart={() => setIsInteracting(true)}
+          onEnd={() => setIsInteracting(false)}
+        />
+
+
+        {/* pass interaction state */}
+        <AvatarModel isInteracting={isInteracting} />
       </Canvas>
     </div>
-  )
-}
-
-function AvatarModel() {
-  const meshRef = useRef()
-  const pointLightRef = useRef()
-  
-  // Track screen width for responsive size
-  const [isMobile, setIsMobile] = useState(false)
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-  
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime()
-    if (meshRef.current) {
-      meshRef.current.position.y = Math.sin(t * 1.5) * 0.15
-      meshRef.current.rotation.y += 0.01
-    }
-    if (pointLightRef.current) {
-      pointLightRef.current.intensity = Math.sin(t * 2) * 0.4 + 1
-    }
-  })
-  
-  const particles = useMemo(() => (
-    [...Array(30)].map((_, i) => ({
-      key: i,
-      position: [
-        Math.sin(i * 1.5) * 2 + (Math.random() - 0.5) * 0.2,
-        Math.cos(i * 0.7) * 2 + (Math.random() - 0.5) * 0.2,
-        Math.sin(i) * 2 + (Math.random() - 0.5) * 0.2
-      ]
-    }))
-  ), [])
-  
-  // Increased ball size for mobile devices (1.5 instead of 0.9)
-  const sphereSize = isMobile ? 2 : 1
-  
-  return (
-    <group>
-      <OrbitControls 
-        enableZoom={false}
-        autoRotate
-        autoRotateSpeed={1.5}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
-      
-      {/* Main sphere with increased size for mobile */}
-      <mesh ref={meshRef}>
-        <sphereGeometry args={[sphereSize, 64, 64]} />
-        <meshStandardMaterial
-          color="#915EFF"
-          metalness={0.8}
-          roughness={0.3}
-          emissive="#915EFF"
-          emissiveIntensity={0.6}
-        />
-      </mesh>
-      
-      {particles.map(({ key, position }) => (
-        <mesh key={key} position={position}>
-          <sphereGeometry args={[0.03, 16, 16]} />
-          <meshStandardMaterial
-            color="#ffffff"
-            emissive="#915EFF"
-            emissiveIntensity={2}
-          />
-        </mesh>
-      ))}
-      
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[3, 3, 2]} intensity={0.8} castShadow />
-      <pointLight
-        ref={pointLightRef}
-        position={[1, 1, 1]}
-        intensity={1.5}
-        color="#ffffff"
-        distance={10}
-        decay={2}
-      />
-    </group>
-  )
+  );
 }

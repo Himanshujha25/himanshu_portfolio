@@ -1,5 +1,4 @@
 import React from "react";
-import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
 import { SectionWrapper } from "../hoc/";
 import background from "../assets/background.webp";
@@ -37,13 +36,12 @@ const Tech = () => {
                       bg-white/20 backdrop-blur-lg rounded-2xl shadow-lg shadow-cyan-300/40 
                       transition-all duration-300 hover:scale-110 hover:shadow-cyan-400/60"
           >
-            {/* Show 3D Ball on PC, Image on Mobile */}
-            <div className="hidden sm:block w-24 h-24 md:w-32 md:h-32">
-              <BallCanvas icon={technology.icon} />
-            </div>
-            <div className="block sm:hidden">
-              <img src={technology.icon} alt={technology.name} className="w-16 h-16 object-contain" />
-            </div>
+            {/* SAME IMAGE ON BOTH MOBILE + PC */}
+            <img 
+              src={technology.icon} 
+              alt={technology.name} 
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain" 
+            />
 
             {/* Responsive Text */}
             <p className="mt-3 text-xs sm:text-sm md:text-lg font-semibold 
@@ -57,4 +55,4 @@ const Tech = () => {
   );
 };
 
-export default SectionWrapper(Tech,"tech");
+export default SectionWrapper(Tech, "tech");

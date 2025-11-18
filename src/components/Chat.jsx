@@ -1,101 +1,127 @@
-import React, { useState } from "react";
-import nlp from "compromise"; // Import NLP library
+import React, { useState, useRef, useEffect } from "react";
 import { FaRobot, FaTimes, FaPaperPlane } from "react-icons/fa";
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi! How can I help you today? Ask anything!" },
+    {
+      from: "bot",
+      text: "Hello! I am Himanshu’s personal AI assistant. I’m trained to provide information about Himanshu — his skills, projects, experience, and portfolio details. How can I help you today?",
+    },
   ]);
+  const [typing, setTyping] = useState(false);
 
-  // Predefined Intents
-  const intents = [
-    {
-      keywords: ["resume", "cv", "download"],
-      response: "You can download my resume from navbar section. Just click on resume button.",
-    },
-    {
-      keywords: ["about", "who are you", "your name"],
-      response:
-        "I am a smart AI Chatbot built for answering your questions! Want to know more? Read my FAQs section!",
-    },
-    {
-      keywords: ["faq", "questions", "help"],
-      response: "Check out the FAQ section for common questions: [FAQs](#faq)",
-    },
-    {keywords: ["himanshu", "who is himanshu", "creator of this chatbot"],
-    response: "Himanshu jha is a web devloper and creator of this chatbot. You can connect with him on [LinkedIn] which is given in contact section.because linkdin is the best platform to connect with professionals.or you can also connect with him on [GitHub] which is also given in contact section. "}
-  ];
+  const chatEndRef = useRef(null);
 
-  const handleSend = () => {
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, typing]);
+
+  // ----------------------------------
+  // BACKEND CALL FUNCTION
+  // ----------------------------------
+  const sendToBackend = async (userMessage) => {
+    try {
+      const res = await fetch("https://himanshu-portfolio-6bd7.onrender.com/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      });
+
+      const data = await res.json();
+      return data.reply;
+    } catch (error) {
+      return "Backend is not responding right now. Please try again later!";
+    }
+  };
+
+  // ----------------------------------
+  // SEND MESSAGE HANDLER
+  // ----------------------------------
+  const handleSend = async () => {
     if (input.trim() === "") return;
 
-    const userMessage = input.toLowerCase();
+    const userMessage = input;
     setMessages((prev) => [...prev, { from: "user", text: input }]);
     setInput("");
 
-    // NLP Processing using Compromise
-    const doc = nlp(userMessage);
-    const words = doc.terms().out("array"); // Extract words
+    // Show typing animation
+    setTyping(true);
 
-    // Match Intent
-    let matchedIntent = intents.find((intent) =>
-      intent.keywords.some((word) => words.includes(word))
-    );
+    // Backend reply
+    const backendReply = await sendToBackend(userMessage);
 
     setTimeout(() => {
-      if (matchedIntent) {
-        setMessages((prev) => [...prev, { from: "bot", text: matchedIntent.response }]);
-      } else {
-        setMessages((prev) => [
-          ...prev,
-          { from: "bot", text: "Sorry, I didn’t understand that. Try rephrasing!" },
-        ]);
-      }
-    }, 1000);
+      setTyping(false);
+      setMessages((prev) => [...prev, { from: "bot", text: backendReply }]);
+    }, 500);
   };
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
       {isOpen ? (
-        <div className="w-80 h-[500px] bg-[#1D1836] border border-gray-600 rounded-xl shadow-lg flex flex-col">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-black p-3 flex justify-between items-center rounded-t-xl">
-            <span className="font-semibold">ChatBot</span>
-            <FaTimes className="cursor-pointer" onClick={() => setIsOpen(false)} />
+        <div className="w-80 h-[520px] bg-[#1D1836] border border-gray-600 rounded-2xl shadow-2xl flex flex-col animate-fadeIn">
+          
+          {/* HEADER */}
+          <div className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-black p-4 flex justify-between items-center rounded-t-2xl shadow-md">
+            <span className="font-semibold text-lg">AI Chat Assistant</span>
+            <FaTimes className="cursor-pointer hover:scale-110 transition" onClick={() => setIsOpen(false)} />
           </div>
 
-          {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 text-white">
+          {/* CHAT MESSAGES */}
+          <div className="flex-1 p-4 overflow-y-auto space-y-4 text-white scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-lg max-w-[70%] ${
-                  msg.from === "user" ? "bg-[#FFD700] text-black self-end" : "bg-gray-700"
+                className={`p-3 rounded-xl max-w-[85%] break-words whitespace-pre-wrap leading-relaxed shadow ${
+                  msg.from === "user"
+                    ? "bg-[#FFD700] text-black self-end ml-auto"
+                    : "bg-gray-700 text-white"
                 }`}
               >
                 {msg.text}
               </div>
             ))}
+
+            {/* Typing animation */}
+            {typing && (
+              <div className="bg-gray-700 p-3 rounded-xl inline-block text-white text-sm">
+                <span className="animate-pulse">Typing...</span>
+              </div>
+            )}
+
+            <div ref={chatEndRef}></div>
           </div>
 
-          {/* Input */}
-          <div className="p-3 flex items-center border-t border-gray-600">
+          {/* INPUT FIELD */}
+          <div className="p-3 flex items-center border-t border-gray-600 bg-[#16122a] rounded-b-2xl">
             <input
               type="text"
-              placeholder="Type a message..."
-              className="flex-1 p-2 rounded-lg bg-gray-800 text-white outline-none"
+              placeholder="Type your message..."
+              className="flex-1 p-2 rounded-lg bg-gray-800 text-white outline-none border border-gray-700 focus:border-[#FFD700] transition"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
             />
-            <FaPaperPlane className="ml-3 text-yellow-400 cursor-pointer" size={20} onClick={handleSend} />
+            <FaPaperPlane
+              className="ml-3 text-yellow-400 cursor-pointer hover:scale-110 transition"
+              size={22}
+              onClick={handleSend}
+            />
           </div>
+
         </div>
       ) : (
-        <button className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-black p-3 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={() => setIsOpen(true)}>
-          <FaRobot size={24} />
+        <button
+          className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-black p-4 rounded-full shadow-xl hover:scale-110 transition-transform"
+          onClick={() => setIsOpen(true)}
+        >
+          <FaRobot size={26} />
         </button>
       )}
     </div>
