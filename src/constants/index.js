@@ -105,10 +105,10 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
       name: "MongoDB",
       icon: mongodb,
     },
-    // {
-    //   name: "Three JS",
-    //   icon: threejs,
-    // },
+    {
+      name: "Three JS",
+      icon: threejs,
+    },
     {
       name: "git",
       icon: git,
@@ -179,7 +179,7 @@ import ecommerceIcon from "../assets/company/E-Commerce Platform.webp"
   ],
   image: ecommerceIcon,   // replace with your zipacres screenshot
   source_code_link: "https://zipacres.com",
-  date: "06.10.24 - 15.12.24",
+  date: "06.08.25 - 15.09.25",
 }
 
   ];

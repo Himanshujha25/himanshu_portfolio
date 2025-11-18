@@ -8,11 +8,11 @@
   "location": "Noida, Uttar Pradesh, India",
 
   "socialLinks": {
-    "github": "https://github.com/himanshujha25",
-    "linkedin": "https://linkedin.com/in/himanshujha25",
+    "github": "https://github.com/Himanshujha25",
+    "linkedin": "https://www.linkedin.com/in/himanshu-jha-85021a318/",
     "twitter": "https://twitter.com/himanshujha25",
-    "instagram": "https://instagram.com/himanshujha25",
-    "portfolio": "https://your-portfolio-link-here.com"
+    "instagram": "https://www.instagram.com/jhahimanshu_25/"
+
   },
 
   "education": [
@@ -63,39 +63,26 @@
     ]
   },
 
-  "projects": [
+ "projects": [
     {
-      "title": "Random Quote Generator",
-      "tech": ["HTML", "CSS", "JavaScript"],
-      "description": "A simple UI-based quote generator that fetches random motivational quotes, designed with a smooth user interface and clean layout.",
-      "github": "https://github.com/himanshujha25/random-quote-generator",
-      "live": "https://your-live-url.com"
+      "title": "Triply – AI-Based Travel Recommendation Platform",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Node.js", "API Integration"],
+      "description": "A modern travel discovery platform that suggests destinations, shows detailed place insights, and displays curated travel plans. Designed with smooth UI, animations, optimized performance, and fully responsive pages.",
+      "live": "https://triplyv2.vercel.app/"
     },
     {
-      "title": "BMI Calculator",
-      "tech": ["HTML", "CSS", "JavaScript"],
-      "description": "A responsive BMI calculator that allows users to enter height and weight and get health metrics instantly. Includes clean UI and color-coded category results.",
-      "github": "https://github.com/himanshujha25/bmi-calculator"
+      "title": "ZipAcres – Real Estate Property Showcasing Platform",
+      "tech": ["React", "Tailwind CSS", "Node.js", "MongoDB"],
+      "description": "A professional real estate website built for showcasing premium properties with dynamic pages, location-based search, responsive design, and high-quality visuals. Optimized for clients to manage listings and inquiries efficiently.",
+      "live": "https://zipacres.com/"
     },
     {
-      "title": "To-Do List App",
-      "tech": ["HTML", "CSS", "JavaScript"],
-      "description": "A minimal, user-friendly task manager with dynamic task creation, deletion, and local storage support.",
-      "github": "https://github.com/himanshujha25/todo-list"
-    },
-    {
-      "title": "Unlimited Color Changer",
-      "tech": ["JavaScript"],
-      "description": "A fun interactive project that changes the background color continuously using JavaScript's random color logic.",
-      "github": "https://github.com/himanshujha25/color-changer"
-    },
-    {
-      "title": "Live Client Website",
-      "tech": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-      "description": "Designed and developed a fully responsive live client website with optimized UI, backend integration, and deployment.",
-      "live": "https://client-website.com"
+      "title": "Attendance MVP – Smart Attendance System for Colleges",
+      "tech": ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
+      "description": "A secure attendance system where only registered teachers can log in using their unique ID to mark attendance. Students can view attendance records, and teachers can generate downloadable PDF reports. Designed for real-world college usage with strong authentication and smooth UI.",
+      "live": "https://attendance-mvp.vercel.app/"
     }
-  ],
+  ],    
 
   "experience": [
     {
